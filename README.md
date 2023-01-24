@@ -1,7 +1,8 @@
 
 # gpu-store
 
-Graphics cards web store using Next.js & Bootstrap-React.
+Graphics cards demo web store using Next.js & Bootstrap-React.
+(not a real store, for educational purposes only)
 Written TS & JS
 
 
