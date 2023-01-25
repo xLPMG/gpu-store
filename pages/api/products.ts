@@ -1,12 +1,26 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import type { Product } from '../../interfaces'
+import productData from '../../data/productInfo.json';
 
-const products: Product[] = [{ id: 1, name: "RX 6700", price: 10 }, { id: 2, name: "RX 6700XT", price: 10 }, { id: 3, name: "RX 6750XT", price: 10 }]
+function jsonToArray(json) {
+  var array = [];
+  for (var key in json) {
+    if (json.hasOwnProperty(key)) {
+      var item = json[key];
+      array.push({
+        id: item.id,
+        name: item.name,
+        price: item.price
+      });
+    }
+  }
+  return array;
+}
 
 export default function handler(
   _req: NextApiRequest,
   res: NextApiResponse<Product[]>
 ) {
 
-  res.status(200).json(products)
+  res.status(200).json(jsonToArray(productData))
 }

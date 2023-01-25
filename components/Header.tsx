@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function Header() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" expand="lg" variant="dark">
       <Container>
         <Navbar.Brand href="/">gpu-store</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
