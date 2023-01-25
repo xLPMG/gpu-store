@@ -10,6 +10,7 @@ function jsonToArray(json) {
       array.push({
         id: item.id,
         name: item.name,
+        manufacturer: item.manufacturer,
         price: item.price
       });
     }
