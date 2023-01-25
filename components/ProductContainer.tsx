@@ -1,18 +1,11 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import type { Product } from '../interfaces'
-
-const CardStyle = {
-  border: "1px solid #03506f",
-  borderRadius: "10px",
-  padding: "10px",
-  margin: "10px",
-  width: "18rem",
-};
+import styles from '../styles/components/ProductContainer.module.css';
 
 function MainContainer(product: Product) {
   return (
-    <Card style={CardStyle}>
+    <Card className={styles.card}>
       {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
