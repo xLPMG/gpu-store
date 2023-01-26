@@ -6,7 +6,7 @@ import styles from '../styles/components/ProductContainer.module.css';
 function MainContainer(product: Product) {
   return (
     <Card className={styles.card}>
-      {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+      <Card.Img variant="top" src={product.imageid}/>
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
         <Card.Text>{product.price}$</Card.Text>

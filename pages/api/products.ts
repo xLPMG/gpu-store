@@ -9,6 +9,7 @@ function jsonToArray(json) {
       var item = json[key];
       array.push({
         id: item.id,
+        imageid: item.imageid,
         name: item.name,
         manufacturer: item.manufacturer,
         price: item.price
