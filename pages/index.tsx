@@ -23,35 +23,35 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-        <Tabs
-          defaultActiveKey="amd"
-          id="uncontrolled-tab-example"
-          className="mb-3">
-          <Tab eventKey="amd" title="AMD">
-            <div style={{ display: "flex", flexWrap: "wrap" }}>
-              {data.map((product) => (
-                product.manufacturer == "AMD"
-                  ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
-              ))}
-            </div>
-          </Tab>
-          <Tab eventKey="nvidia" title="NVIDIA">
-            <div style={{ display: "flex", flexWrap: "wrap" }}>
-              {data.map((product) => (
-                product.manufacturer == "NVIDIA"
-                  ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
-              ))}
-            </div>
-          </Tab>
-          <Tab eventKey="intel" title="Intel">
-            <div style={{ display: "flex", flexWrap: "wrap" }}>
-              {data.map((product) => (
-                product.manufacturer == "Intel"
-                  ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
-              ))}
-            </div>
-          </Tab>
-        </Tabs>
+      <Tabs
+    defaultActiveKey="amd"
+    id="uncontrolled-tab-example"
+    className="mb-3">
+    <Tab eventKey="amd" title="AMD">
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {data.map((product) => (
+          product.manufacturer == "AMD"
+            ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
+        ))}
+      </div>
+    </Tab>
+    <Tab eventKey="nvidia" title="NVIDIA">
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {data.map((product) => (
+          product.manufacturer == "NVIDIA"
+            ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
+        ))}
+      </div>
+    </Tab>
+    <Tab eventKey="intel" title="Intel">
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {data.map((product) => (
+          product.manufacturer == "Intel"
+            ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
+        ))}
+      </div>
+    </Tab>
+  </Tabs>
       </main>
     </>
   )
