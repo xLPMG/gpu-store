@@ -31,7 +31,7 @@ export default function Home() {
             <div style={{ display: "flex", flexWrap: "wrap" }}>
               {data.map((product) => (
                 product.manufacturer == "AMD"
-                  ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer}  imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
+                  ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
               ))}
             </div>
           </Tab>

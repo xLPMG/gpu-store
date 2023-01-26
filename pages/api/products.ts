@@ -8,7 +8,7 @@ function jsonToArray(json) {
     if (json.hasOwnProperty(key)) {
       var item = json[key];
       array.push({
-        id: item.id,
+        id: item,
         imageid: item.imageid,
         name: item.name,
         manufacturer: item.manufacturer,
@@ -23,6 +23,5 @@ export default function handler(
   _req: NextApiRequest,
   res: NextApiResponse<Product[]>
 ) {
-
   res.status(200).json(jsonToArray(productData))
 }

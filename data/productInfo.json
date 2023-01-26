@@ -1,70 +1,59 @@
 {
 
-    "p0": {
-        "id": 0,
+    "0": {
         "name": "Asus Dual RX 6600",
         "manufacturer": "AMD",
         "price": 10,
         "imageid": "https://m.media-amazon.com/images/I/61w9O1yPrdL._AC_SL1200_.jpg"
     },
-    "p1": {
-        "id": 1,
+    "1": {
         "name": "Sapphire Pulse Radeon RX 6700",
         "manufacturer": "AMD",
         "price": 10,
         "imageid": "https://media.nbb-cdn.de/images/products/790000/790346/Pulse_RX_6700_001_fc57.png?size=400"
     },
-    "p2": {
-        "id": 2,
+    "2": {
         "name": "RX 6700 XT MSI Gaming",
         "manufacturer": "AMD",
         "price": 10,
         "imageid": "https://m.media-amazon.com/images/I/81eRXm5GGoL._AC_SX425_.jpg"
     },
-    "p3": {
-        "id": 3,
+    "3": {
         "name": "RX 6750XT",
         "manufacturer": "AMD",
         "price": 10
     },
-    "p4": {
-        "id": 4,
+    "4": {
         "name": "RX 6800",
         "manufacturer": "AMD",
         "price": 15
     },
-    "p5": {
-        "id": 5,
+    "5": {
         "name": "RX 6800XT",
         "manufacturer": "AMD",
         "price": 17
     },
-    "p6": {
-        "id": 6,
+    "6": {
         "name": "RX 6900",
         "manufacturer": "AMD",
         "price": 20
     },
-    "p7": {
-        "id": 7,
+    "7": {
         "name": "RTX 3050",
         "manufacturer": "NVIDIA",
         "price": 10
     },
-    "p8": {
-        "id": 8,
+    "8": {
         "name": "RTX 3060",
         "manufacturer": "NVIDIA",
         "price": 15
     },
-    "p9": {
-        "id": 9,
+    "9": {
         "name": "RTX 3060TI",
         "manufacturer": "NVIDIA",
         "price": 17
     },
-    "p10": {
-        "id": 10,
+    "10": {
         "name": "RTX 3070",
         "manufacturer": "NVIDIA",
         "price": 20
