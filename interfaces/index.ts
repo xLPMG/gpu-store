@@ -5,3 +5,7 @@ export type Product = {
     price: number,
     imageid?: string
   }
+export type CartItem =  {
+    id: number,
+    qty: number
+ }

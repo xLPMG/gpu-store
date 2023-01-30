@@ -8,7 +8,7 @@ function jsonToArray(json) {
     if (json.hasOwnProperty(key)) {
       var item = json[key];
       array.push({
-        id: item,
+        id: item.id,
         imageid: item.imageid,
         name: item.name,
         manufacturer: item.manufacturer,
