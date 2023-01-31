@@ -9,3 +9,8 @@ export type CartItem =  {
     id: number,
     qty: number
  }
+
+ export type Cart =  {
+  id: number
+  items: Array<CartItem>
+}
