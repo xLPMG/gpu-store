@@ -11,11 +11,11 @@ export default function handler(
     const { query, method } = req
     switch (method) {
       case 'PUT':
-        res.status(201).json("cart/"+cartIDCounter)
+        res.status(201).json(cartIDCounter+"")
         cartIDCounter++
         break
       default:
-        res.setHeader('Allow', ['GET', 'PUT'])
+        res.setHeader('Allow', ['PUT'])
         res.status(405).end(`Method ${method} Not Allowed`)
     }
   }

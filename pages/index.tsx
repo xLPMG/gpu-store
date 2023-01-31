@@ -1,20 +1,36 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
-import type { Product } from '../interfaces'
+import Router from "next/router";
 import useSwr from 'swr'
-import Link from 'next/link'
 import ProductContainer from '../components/ProductContainer'
+import Cart from '../components/Cart'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const inter = Inter({ subsets: ['latin'] })
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-export default function Home() {
-  const { data, error, isLoading } = useSwr<Product[]>('/api/products', fetcher)
-  if (error) return <div>Failed to load data</div>
-  if (isLoading) return <div>Loading...</div>
-  if (!data) return null
+export async function getStaticProps(context) {
+  const resProd = await fetch(checkEnvironment().concat('/api/products'))
+  const products = await resProd.json()
+  const resCartID = await fetch(checkEnvironment().concat('/api/carts'), {method: 'PUT',headers: {'Content-Type': 'application/json'}})
+  const cartID = await resCartID.json()
+  return {
+    props: {products,cartID} 
+  };
+}
+
+export default function Home({ products, cartID }) {
+  const { data: cartItemData, error } = useSwr('/api/cart/'+cartID, fetcher)
+
+  if (error) return <div>Failed to load users</div>
+  if (!cartItemData) return <div>Loading...</div>
+
+  var cartItems=[]
+    for(var i in cartItemData){
+      cartItems.push(cartItemData[i]);
+    }
   return (
     <>
       <Head>
@@ -23,36 +39,51 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-      <Tabs
+        <Tabs
     defaultActiveKey="amd"
     id="uncontrolled-tab-example"
     className="mb-3">
     <Tab eventKey="amd" title="AMD">
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {data.map((product) => (
+        {products.map((product) => (
           product.manufacturer == "AMD"
-            ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
+            ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"} cartId={cartID}></ProductContainer>) : null
         ))}
       </div>
     </Tab>
     <Tab eventKey="nvidia" title="NVIDIA">
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {data.map((product) => (
+        {products.map((product) => (
           product.manufacturer == "NVIDIA"
-            ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
+            ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"} cartId={cartID}></ProductContainer>) : null
         ))}
       </div>
     </Tab>
     <Tab eventKey="intel" title="Intel">
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {data.map((product) => (
+        {products.map((product) => (
           product.manufacturer == "Intel"
-            ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"}></ProductContainer>) : null
+            ? (<ProductContainer id={product.id} name={product.name} manufacturer={product.manufacturer} price={product.price} imageid={product.imageid || "/placeholder.jpeg"} cartId={cartID}></ProductContainer>) : null
         ))}
       </div>
     </Tab>
   </Tabs>
+  <p>Your Cart ID: {cartID}</p>
+  <ListGroup>
+      {cartItems.map((cartItem) => (
+        <Cart id={cartItem.id} qty={cartItem.qty} ></Cart>
+        ))}
+        </ListGroup>
       </main>
     </>
   )
 }
+
+export const checkEnvironment = () => {
+  let base_url =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://example.com";
+
+  return base_url;
+};
