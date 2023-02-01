@@ -4,14 +4,14 @@ import type { Product } from '../interfaces'
 import styles from '../styles/components/ProductContainer.module.css';
 import Router from "next/router";
 
-function MainContainer(product, cartId) {
+function MainContainer(props) {
   return (
     <Card className={styles.card}>
-      <Card.Img variant="top" src={product.imageid}/>
+      <Card.Img variant="top" src={props.imageid}/>
       <Card.Body>
-        <Card.Title>{product.name}</Card.Title>
-        <Card.Text>{product.price}$</Card.Text>
-        <Button variant="primary" onClick={() =>buttonClick(product, cartId)}>Add to cart</Button>
+        <Card.Title>{props.name}</Card.Title>
+        <Card.Text>{props.price}$</Card.Text>
+        <Button variant="primary" onClick={() =>buttonClick(props, props.cartId)}>Add to cart</Button>
       </Card.Body>
     </Card>
   );
@@ -27,5 +27,5 @@ function buttonClick(product: Product, cartId: string){
     },
     body: JSON.stringify({id: product.id, qty: 1})
   })
-  Router.reload()
+  //Router.reload()
 }
