@@ -4,34 +4,34 @@
         "id": 0,
         "name": "Asus Dual RX 6600",
         "manufacturer": "AMD",
-        "price": 10,
+        "price": 1000,
         "imageid": "https://m.media-amazon.com/images/I/61w9O1yPrdL._AC_SL1200_.jpg"
     },
     {
         "id": 1,
         "name": "Sapphire Pulse Radeon RX 6700",
         "manufacturer": "AMD",
-        "price": 10,
+        "price": 1000,
         "imageid": "https://media.nbb-cdn.de/images/products/790000/790346/Pulse_RX_6700_001_fc57.png?size=400"
     },
     {
         "id": 2,
         "name": "RX 6700 XT MSI Gaming",
         "manufacturer": "AMD",
-        "price": 10,
+        "price": 1000,
         "imageid": "https://m.media-amazon.com/images/I/81eRXm5GGoL._AC_SX425_.jpg"
     },
     {
         "id": 3,
         "name": "RX 6750XT",
         "manufacturer": "AMD",
-        "price": 10
+        "price": 1000
     },
     {
         "id": 4,
         "name": "RX 6800",
         "manufacturer": "AMD",
-        "price": 15
+        "price": 1500
     },
     {
         "id": 5,

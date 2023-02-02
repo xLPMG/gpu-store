@@ -10,6 +10,9 @@ export default function handler(
   ) {
     const { query, method } = req
     switch (method) {
+      case 'GET':
+        res.status(200).json(cartIDCounter+"")
+        break
       case 'PUT':
         res.status(201).json(cartIDCounter+"")
         cartIDCounter++

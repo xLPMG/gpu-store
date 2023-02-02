@@ -2,7 +2,6 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import type { Product } from '../interfaces'
 import styles from '../styles/components/ProductContainer.module.css';
-import Router from "next/router";
 
 function MainContainer(props) {
   return (

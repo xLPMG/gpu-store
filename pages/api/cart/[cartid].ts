@@ -7,8 +7,8 @@ var cartID: string
 
  export default function handler(req: NextApiRequest, res: NextApiResponse<CartItem[]>) {
     const requestMethod = req.method;
-    const productType = req.query
-    cartID = productType.cartid
+    const slug = req.query
+    cartID = slug.cartid[0]
     if (existsSync("./data/carts/cart-"+cartID+".json")) {
       cartItems = <CartItem[]> JSON.parse(readFileSync("./data/carts/cart-"+cartID+".json"));
     }else{
