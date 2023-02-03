@@ -1,4 +1,4 @@
-import type {CartItem } from '../interfaces'
+import type {CartItem, Product } from '../interfaces'
 import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
 

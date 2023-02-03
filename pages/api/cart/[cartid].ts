@@ -10,7 +10,7 @@ var cartID: string
     const slug = req.query
     cartID = slug.cartid[0]
     if (existsSync("./data/carts/cart-"+cartID+".json")) {
-      cartItems = <CartItem[]> JSON.parse(readFileSync("./data/carts/cart-"+cartID+".json"));
+      cartItems = <CartItem[]> JSON.parse(readFileSync("./data/carts/cart-"+cartID+".json", 'utf8'));
     }else{
       cartItems = [];
     }

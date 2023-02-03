@@ -1,0 +1,15 @@
+#products {
+    float: left;
+    display: inline;
+    width: 80%;
+}
+
+#cart {
+    float: right;
+    display: inline;
+    width: 20%;
+    padding: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
